@@ -89,7 +89,7 @@ export default class Vector {
       return this.cross(new Vector(0, 0, 1));
     }
     if (this.size == 2) {
-      return new Vector(this[1], this[0]);
+      return new Vector(-this[1], this[0]);
     }
     throw new Error('Vectors must have size 2 or 3 when getting a perpendicular one.');
   }

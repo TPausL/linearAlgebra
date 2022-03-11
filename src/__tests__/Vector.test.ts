@@ -65,7 +65,7 @@ test('get perpendicular', () => {
   const b = new Vector(2, 4);
 
   expect(a.getPerpendicular().array).toEqual([1, -1, 0]);
-  expect(b.getPerpendicular().array).toEqual([4, 2]);
+  expect(b.getPerpendicular().array).toEqual([-4, 2]);
 });
 
 test('multiply', () => {
