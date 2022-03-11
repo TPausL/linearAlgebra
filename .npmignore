@@ -2,3 +2,6 @@ src
 tsconfig.json
 .eslintrc
 .prettierrc
+.editorconfig
+jestconfig.json
+yarn*

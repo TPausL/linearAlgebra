@@ -1,6 +1,7 @@
 {
-  "name": "linearAlgebra",
-  "version": "1.0.0",
+  "name": "@tpausl/linear-algebra",
+  "version": "0.1.0",
+  "description": "Simple package for working with linear algebra",
   "main": "index.js",
   "license": "MIT",
   "devDependencies": {
