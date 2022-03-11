@@ -89,7 +89,6 @@ test('normalize', () => {
   const b = new Vector(2, 4, 6);
   const c = new Vector(2, 4);
 
-  console.log(a.normalize().array);
   expectToBeCloseToArray(a.normalize().array, [1 / Math.sqrt(3), 1 / Math.sqrt(3), 1 / Math.sqrt(3)]);
   expectToBeCloseToArray(b.normalize().array, [1 / Math.sqrt(14), Math.sqrt(2 / 7), 3 / Math.sqrt(14)]);
   expectToBeCloseToArray(c.normalize().array, [2 / Math.sqrt(20), 4 / Math.sqrt(20)]);
@@ -100,8 +99,15 @@ test('angle', () => {
   const b = new Vector(2, 4, 6);
   const c = new Vector(2, 4);
 
+  const d = new Vector(1, 0);
+
   expect(() => a.angleWith(c)).toThrow('size');
   expect(a.angleWith(b)).toBeCloseTo(0.3874631);
+
+  expect(d.angleWith(new Vector(0, 1))).toBeCloseTo(Math.PI / 2);
+  expect(d.angleWith(new Vector(-1, 0))).toBeCloseTo(Math.PI);
+  expect(d.angleWith(new Vector(0, -1))).toBeCloseTo(Math.PI / 2);
+  expect(d.angleWith(new Vector(1, 0))).toBeCloseTo(0);
 });
 
 function expectToBeCloseToArray(actual: number[], expected: number[]) {
