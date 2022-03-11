@@ -5,3 +5,4 @@ tsconfig.json
 .editorconfig
 jestconfig.json
 yarn*
+.github
