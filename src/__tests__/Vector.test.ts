@@ -95,6 +95,15 @@ test('normalize', () => {
   expectToBeCloseToArray(c.normalize().array, [2 / Math.sqrt(20), 4 / Math.sqrt(20)]);
 });
 
+test('angle', () => {
+  const a = new Vector(1, 1, 1);
+  const b = new Vector(2, 4, 6);
+  const c = new Vector(2, 4);
+
+  expect(() => a.angleWith(c)).toThrow('size');
+  expect(a.angleWith(b)).toBeCloseTo(0.3874631);
+});
+
 function expectToBeCloseToArray(actual: number[], expected: number[]) {
   expect(actual.length).toBe(expected.length);
   actual.forEach((x: number, i: number) => expect(x).toBeCloseTo(expected[i]));

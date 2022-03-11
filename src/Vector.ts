@@ -93,4 +93,10 @@ export default class Vector {
     }
     throw new Error('Vectors must have size 2 or 3 when getting a perpendicular one.');
   }
+
+  angleWith(b: Vector) {
+    if (this.size != b.size) throw new Error('Vectors must have same size when calculation angle!');
+
+    return Math.acos(Math.abs(this.dot(b)) / (Math.abs(this.length) * Math.abs(b.length)));
+  }
 }
